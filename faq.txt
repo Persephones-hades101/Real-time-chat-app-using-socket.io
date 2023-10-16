@@ -1,0 +1,24 @@
+Q. why do we need 
+const htt=require('http').createServer(app);
+in our code?
+
+
+=>The line const http = require('http').createServer(app); is responsible for creating an HTTP server instance that will handle incoming HTTP requests for your Express.js application. In the context of setting up a web application with Express, this line is indeed necessary.
+An HTTP server is required to listen for incoming HTTP requests from clients (browsers, API consumers, etc.) and to send appropriate responses. Without an HTTP server, your Express application would not be able to communicate with clients over the HTTP protocol.
+
+
+
+
+Q. what if we dont include this line???
+
+
+=>Your code will still run, and you'll be able to define routes and handle requests within your Express application (app). However, your application won't be accessible via HTTP, which means it won't be able to serve web pages or API responses to clients.
+
+In other words, your Express application will be just a collection of route definitions, middleware, and request-handling logic, but there won't be an actual server listening for incoming HTTP requests. So, if you try to access your application via a web browser or make API requests to it, you'll receive connection errors, and your application won't be functional over the network.
+
+To make your Express application accessible over HTTP, you need to create an HTTP server as shown in the original code. The server is what listens for incoming HTTP requests and directs them to your Express application for processing. So, it's a crucial component for running a web application built with Express.
+
+
+
+
+
